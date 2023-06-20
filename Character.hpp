@@ -10,6 +10,7 @@ class Character : public GameObject
 {
 public:
     Character(const std::string& imagePath, float x, float y, float scaleX, float scaleY, float speed);
+
     ~Character();
 
     void Start() override;
@@ -23,4 +24,12 @@ public:
 
 private:
     float m_speed;
-};
+
+    bool m_isJumping;
+    float m_jumpHeight;
+    float m_jumpSpeed;
+    float m_originalY;
+
+    const int WindowWidth = 800;
+    const int WindowHeight = 600;
+};  

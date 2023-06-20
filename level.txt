@@ -1,0 +1,12 @@
+ground.png 0 0
+ground.png 1 0
+ground.png 2 0
+ground.png 3 0
+ground.png 4 0
+ground.png 5 0
+ground.png 6 0
+ground.png 7 0
+plataform.png 3 3
+plataform.png 4 3
+player 1 1
+goal 6 1
