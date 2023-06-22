@@ -1,7 +1,7 @@
 #include "GameObject.hpp"
 
 // Constructor
-GameObject::GameObject(const std::string& imagePath, float x, float y, float scaleX, float scaleY)
+GameObject::GameObject(std::string name, const std::string& imagePath, float x, float y, float scaleX, float scaleY)
 {
     // Load the texture
     if (!m_texture.loadFromFile(imagePath))
@@ -9,8 +9,13 @@ GameObject::GameObject(const std::string& imagePath, float x, float y, float sca
         // Error
     }
 
+    m_name = name;
+
     // Creates Sprite
     m_sprite = sf::Sprite(m_texture);
+
+    sf::Vector2u sizeSprite = m_texture.getSize();
+    m_collider = BoxCollider(x, y, sizeSprite.x * scaleX, sizeSprite.y * scaleY);
 
     // Set the sprite position
     m_sprite.setPosition(x, y);
@@ -28,6 +33,18 @@ GameObject::GameObject(const std::string& imagePath, float x, float y, float sca
 // Desctructor
 GameObject::~GameObject()
 {
+}
+
+BoxCollider *GameObject::getCollider() {
+    return &m_collider;
+}
+
+sf::Vector2f GameObject::getPosition() {
+    return m_transform.position;
+}
+
+std::string GameObject::getName() {
+    return m_name;
 }
 
 // Start

@@ -1,26 +1,27 @@
-Estou com um problema local que não consigo rodar o programa pelo WSL na minha maquina Windows. Não tive tempo de arrumar ainda, mas muito provavelmente a solução está aqui: https://stackoverflow.com/questions/61860208/running-graphical-linux-desktop-applications-from-wsl-2-error-e233-cannot-op
+# Futurama The Run
 
-ou
+Estamos usando a biblioteca SFML (Simple and Fast Multimedia Library) para criar um jogo de plataforma com o visual baseado na série animada Futurama e com referências ao Grêmio de Controle e Automação.
 
-https://en.sfml-dev.org/forums/index.php?topic=28293.0
+## Recursos
+- Movimento lateral do personagem;
+- Velocidade ajustável do personagem;
+- Escalas configuráveis para as imagens;
+- Tratamento de exceções.
 
-Estamos usando SFML para o jogo. Próximo commit iremos organizar o README.md
+## Pré-requisitos
+- SFML: Certifique-se de ter a biblioteca SFML instalada.
 
-Atualmente temos:
-Personagem que se move para direita ou esquerda. Velocidade (deltaTime) pode ser modificado. Escala para as imagens. 
+## Como Executar
+1. Instale o SFML no seu sistema.
+   - No WSL, use o comando: `sudo apt-get install libsfml-dev`.
+   - Em outros sistemas, consulte a documentação oficial da SFML para obter instruções de instalação adequadas.
 
-Como rodar:
+2. Compile o projeto.
+   - No terminal, execute o comando:
+     'make'
 
-1. Instale SFML pelo WSL sudo apt-get install libsfml-dev
-2. Rodar ./sfml-app
+3. Execute o jogo.
+   - No terminal, execute o comando: `./sfml-app`.
 
-ou
-
-Compilar:
-g++ -c main.cpp
-
-Linkar:
-g++ main.o -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system
-
-Rodar:
-./sfml-app
+## Agradecimentos
+Gostaríamos de agradecer ao nosso professor pelo suporte durante o semestre e aos participantes do projeto pela colaboração e dedicação.

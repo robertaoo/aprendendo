@@ -6,6 +6,9 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "BoxCollider.hpp"
+#include <string>
+
 struct Transform {
     sf::Vector2f position;
     sf::Vector2f scale;
@@ -14,8 +17,12 @@ struct Transform {
 class GameObject
 {
 public:
-    GameObject(const std::string& imagePath, float x, float y, float scaleX, float scaleY);
+    GameObject(std::string name, const std::string& imagePath, float x, float y, float scaleX, float scaleY);
     virtual ~GameObject();
+
+    sf::Vector2f getPosition();
+    BoxCollider *getCollider();
+    std::string getName();
 
     virtual void Start();
     virtual void Update(float deltaTime);
@@ -27,4 +34,8 @@ protected:
     sf::Texture m_texture;
 
     Transform m_transform;
-};
+
+    BoxCollider m_collider;
+
+    std::string m_name;
+}; 

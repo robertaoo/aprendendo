@@ -9,7 +9,7 @@
 class Character : public GameObject
 {
 public:
-    Character(const std::string& imagePath, float x, float y, float scaleX, float scaleY, float speed);
+    Character(std::string name, const std::string& imagePath, float x, float y, float scaleX, float scaleY, float speed);
 
     ~Character();
 
@@ -20,7 +20,7 @@ public:
     void Jump(float deltaTime);
     //void Gravity(float deltaTime);
 
-    //bool CheckCollision();
+    void DoCollision(sf::Vector2f initialPos);
 
 private:
     float m_speed;
@@ -29,7 +29,4 @@ private:
     float m_jumpHeight;
     float m_jumpSpeed;
     float m_originalY;
-
-    const int WindowWidth = 800;
-    const int WindowHeight = 600;
 };  
